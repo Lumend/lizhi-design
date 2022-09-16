@@ -7,4 +7,15 @@
     width: 100%;
     box-sizing: border-box;
   }
+  button {
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.dn {
+  display: none !important;
 }
