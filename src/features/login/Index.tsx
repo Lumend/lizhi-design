@@ -1,17 +1,13 @@
 import React from "react"
 import "./index.scss"
-
 import useDeviceDetect from "../../hook/useDeviceDetect"
+import PC from "./pc"
+import Mobile from "./mobile"
 
 const LoginIndex = () => {
   const { isMobile } = useDeviceDetect()
 
-  return (
-    <div className="page-login">
-      <h1>Login</h1>
-      <p>isMobile: {isMobile ? 1 : 0}</p>
-    </div>
-  )
+  return isMobile ? <Mobile></Mobile> : <PC></PC>
 }
 
 export default LoginIndex

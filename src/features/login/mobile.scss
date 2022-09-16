@@ -1,0 +1,154 @@
+@function px2rem($px) {
+  $rem: 37.5px;
+  @return ($px/$rem) + rem;
+}
+
+.page-login-mobile {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../../assets/images/iPhone_banner@3x.png) no-repeat left
+    bottom / 100% auto;
+  box-sizing: border-box;
+  padding: 0 px2rem(30px);
+  .title {
+    height: px2rem(94px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-family: PingFangSC-Medium;
+      font-size: px2rem(36px);
+      color: #333333;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+  }
+  .form-wrap {
+    width: 100%;
+    overflow: hidden;
+    margin-top: px2rem(104px);
+    background: #ffffff;
+    box-shadow: 0 0 px2rem(20px) 0 rgba(187, 191, 196, 0.3);
+    border-radius: px2rem(32px);
+    box-sizing: border-box;
+    padding: px2rem(60px) px2rem(40px) px2rem(36px) px2rem(40px);
+    h1 {
+      font-family: PingFangSC-Medium;
+      font-size: px2rem(48px);
+      color: #333333;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+    .form {
+      width: 100%;
+      height: px2rem(564px);
+      overflow: hidden;
+      border-bottom: 1px solid #d0d3d6;
+      margin-top: px2rem(48px);
+      input {
+        border: px2rem(2px) solid #d0d3d6;
+        border-radius: px2rem(12px);
+        height: px2rem(88px);
+        padding: 0 px2rem(32px) 0 px2rem(96px);
+        outline: none;
+        &::placeholder {
+          font-family: PingFang-SC-Regular;
+          font-size: px2rem(32px);
+          color: #b1b3b8;
+          letter-spacing: 0;
+          font-weight: 400;
+        }
+        &:active,
+        &:focus {
+          border-color: #3371ff;
+        }
+        &.error {
+          border-color: #fa5757;
+        }
+      }
+      .item {
+        position: relative;
+        margin-bottom: px2rem(28px);
+        i {
+          width: px2rem(32px);
+          height: px2rem(32px);
+          display: block;
+          position: absolute;
+          left: px2rem(32px);
+          top: px2rem(28px);
+          background-repeat: no-repeat;
+          background-size: px2rem(32px) px2rem(32px);
+          &.email {
+            background-image: url(../../assets/images/pc_emall.png);
+          }
+          &.pwd {
+            background-image: url(../../assets/images/pc_password.png);
+          }
+        }
+        .tips {
+          margin-top: px2rem(20px);
+          font-family: PingFang-SC-Regular;
+          font-size: px2rem(24px);
+          color: #fa5757;
+          letter-spacing: 0;
+          font-weight: 400;
+        }
+        .next {
+          width: 100%;
+          height: px2rem(88px);
+          display: block;
+          background: #3371ff;
+          border-radius: px2rem(12px);
+          border: 0;
+          color: #fff;
+          &.disable {
+            background: #bbbfc4;
+          }
+          &:hover {
+            background-color: #2e66e9;
+          }
+          &:active {
+            background: #4781ff;
+          }
+        }
+      }
+      .toast {
+        padding-top: px2rem(36px);
+        text-align: center;
+        p {
+          max-width: 100%;
+          max-height: px2rem(103px);
+          display: inline-block;
+          overflow: hidden;
+          background: #fc6161;
+          box-shadow: 0 0 px2rem(14px) 0 rgba(133, 137, 143, 0.4);
+          border-radius: px2rem(8px);
+          padding: px2rem(13px) px2rem(20px);
+          font-family: PingFang-SC-Regular;
+          font-size: px2rem(26px);
+          color: #ffffff;
+          letter-spacing: 0;
+          text-align: center;
+          font-weight: 400;
+        }
+      }
+    }
+    .other {
+      padding-top: px2rem(32px);
+      text-align: center;
+      a {
+        font-family: PingFang-SC-Regular;
+        font-size: px2rem(28px);
+        color: #3371ff;
+        letter-spacing: 0;
+        font-weight: 400;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
