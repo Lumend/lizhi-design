@@ -55,11 +55,7 @@
         padding: 0 px2rem(32px) 0 px2rem(96px);
         outline: none;
         &::placeholder {
-          font-family: PingFang-SC-Regular;
           font-size: px2rem(32px);
-          color: #b1b3b8;
-          letter-spacing: 0;
-          font-weight: 400;
         }
         &:active,
         &:focus {
@@ -70,51 +66,22 @@
         }
       }
       .item {
-        position: relative;
         margin-bottom: px2rem(28px);
         i {
           width: px2rem(32px);
           height: px2rem(32px);
-          display: block;
-          position: absolute;
           left: px2rem(32px);
           top: px2rem(28px);
-          background-repeat: no-repeat;
           background-size: px2rem(32px) px2rem(32px);
-          &.email {
-            background-image: url(../../assets/images/pc_emall.png);
-          }
-          &.pwd {
-            background-image: url(../../assets/images/pc_password.png);
-          }
         }
         .tips {
           margin-top: px2rem(20px);
-          font-family: PingFang-SC-Regular;
           font-size: px2rem(24px);
           color: #fa5757;
-          letter-spacing: 0;
-          font-weight: 400;
         }
         .next {
-          width: 100%;
           height: px2rem(88px);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #3371ff;
           border-radius: px2rem(12px);
-          border: 0;
-          color: #fff;
-          &.disable {
-            background: #bbbfc4;
-          }
-          &:hover {
-            background-color: #2e66e9;
-          }
-          &:active {
-            background: #4781ff;
-          }
           .icon {
             width: px2rem(48px);
             height: px2rem(48px);
@@ -162,15 +129,14 @@
       }
     }
   }
-}
-
-.step-2 {
-  padding-top: px2rem(20px);
-  .thumb {
-    width: px2rem(168px);
-    height: px2rem(168px);
-    margin: 0 auto;
-    background: url(../../assets/images/iphone_tx.png) no-repeat center center /
-      100% 100%;
+  .step-2 {
+    padding-top: px2rem(20px);
+    .thumb {
+      width: px2rem(168px);
+      height: px2rem(168px);
+      margin: 0 auto;
+      background: url(../../assets/images/iphone_tx.png) no-repeat center center /
+        100% 100%;
+    }
   }
 }

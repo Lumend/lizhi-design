@@ -1,8 +1,8 @@
 import React from "react"
 import "./index.scss"
 import useDeviceDetect from "../../hook/useDeviceDetect"
-import PC from "./pc"
-import Mobile from "./mobile"
+import PC from "./Pc"
+import Mobile from "./Mobile"
 
 const LoginIndex = () => {
   const { isMobile } = useDeviceDetect()
