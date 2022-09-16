@@ -1,16 +1,14 @@
-import { message } from "antd"
+// import { message } from "antd"
 import axios from "axios"
 
 const instance = axios.create({
-  baseURL:
-    window.location.host.indexOf("localhost") > -1
-      ? "http://192.168.11.188:1801"
-      : "http://nav.zsmicroelec.com",
+  baseURL: "https://gateway.lizhi.io/demo/",
   timeout: 5000,
   headers: {
     Accept: "application/json",
-    "Content-Type": "application/json",
-    token: localStorage.getItem("token") || "",
+    "Content-Type": "multipart/form-data",
+    "Access-Control-Allow-Origin": "*",
+    Authorization: "Bearer " + localStorage.getItem("token") || "",
   },
 })
 
@@ -27,14 +25,14 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   function (response) {
-    if (response.status == 200 && response.data) {
-      if (response.data.code == 500 && response.data.message) {
-        message.error(response.data.message)
-      }
-      if (response.data.code == 401 && response.data.message) {
-        message.error(response.data.message)
-        window.location.href = "/user/login"
-      }
+    if (response.status == 200) {
+      // if (response.data.code == 500 && response.data.message) {
+      //   // message.error(response.data.message)
+      // }
+      // if (response.data.code == 401 && response.data.message) {
+      //   // message.error(response.data.message)
+      //   window.location.href = "/user/login"
+      // }
       return response.data
     }
 

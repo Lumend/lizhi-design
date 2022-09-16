@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useReducer, useState } from "react"
 import "./mobile.scss"
+import request from "../../utils/request"
 
 const LoginIndex = () => {
   const [toast, setToast] = useState("")
@@ -8,8 +9,8 @@ const LoginIndex = () => {
       return { ...state, ...newState }
     },
     {
-      username: "",
-      password: "",
+      username: "user09",
+      password: "OpenSesame",
     }
   )
 
@@ -49,6 +50,13 @@ const LoginIndex = () => {
     )
   }, [info, tips])
 
+  const showToast = (msg: string) => {
+    setToast(msg)
+    setTimeout(() => {
+      setToast("")
+    }, 3000)
+  }
+
   const handleInputChange = (event: any) => {
     const { name, value } = event.target
     setInfo({ [name]: value })
@@ -59,6 +67,15 @@ const LoginIndex = () => {
     if (invalided) {
       return
     }
+    request.post("login.php?phase=1", info).then((resp: any) => {
+      console.log("---resp", resp)
+      if (resp.status !== 0) {
+        showToast(resp.message)
+      } else {
+        localStorage.setItem("token", resp.data.token)
+        request.defaults.headers["Authorization"] = "Bearer " + resp.data.token
+      }
+    })
   }
 
   return (
@@ -78,6 +95,7 @@ const LoginIndex = () => {
               onChange={handleInputChange}
               autoComplete="off"
               maxLength={16}
+              value="user09"
             />
             <p className="tips">{tips.username}</p>
           </div>
@@ -89,6 +107,7 @@ const LoginIndex = () => {
               name="password"
               onChange={handleInputChange}
               autoComplete="off"
+              value="OpenSesame"
             />
             <p className="tips">{tips.password}</p>
           </div>
