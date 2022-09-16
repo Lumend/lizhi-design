@@ -33,6 +33,8 @@
       height: 331px;
       overflow: hidden;
       border-bottom: 1px solid #d0d3d6;
+      box-sizing: border-box;
+      padding-top: 28px;
       .item {
         margin-bottom: 20px;
         i {
